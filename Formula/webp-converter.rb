@@ -3,8 +3,8 @@ class WebpConverter < Formula
 
   desc "A simple CLI tool to convert images to WebP format"
   homepage "https://github.com/reneboygarcia/webp-converter"
-  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "307ac26299d16c8bd20567ba4022823663ab9014ae60cbe29916369c640b725a"
+  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "a1c5873f8e73bb1de1f9a8a431596817e924f4ab333908d2f3fcc600cde2233a"
   license "MIT"
 
   depends_on "python@3.12"
@@ -37,11 +37,6 @@ class WebpConverter < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
-  end
-
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
   end
 
   resource "pillow" do
