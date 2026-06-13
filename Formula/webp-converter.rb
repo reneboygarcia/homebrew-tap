@@ -1,8 +1,8 @@
 class WebpConverter < Formula
   desc "Fast CLI tool to convert images to WebP — Rust rewrite"
   homepage "https://github.com/reneboygarcia/webp-converter"
-  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.5.tar.gz"
-  sha256 "569572fe10e1d55cacbd929afb1ddaa0a6ea9f028453fcd70465d7281c49236f"
+  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "f3e4537c90e6a2866d8efa7b0f1c4139ae6b634b48d96d5b82f18c10ef835db7"
   license "MIT"
 
   depends_on "rust" => :build
