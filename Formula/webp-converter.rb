@@ -1,8 +1,8 @@
 class WebpConverter < Formula
-  desc "A CLI tool to convert images to WebP format — fast Rust rewrite"
+  desc "Fast CLI tool to convert images to WebP — Rust rewrite"
   homepage "https://github.com/reneboygarcia/webp-converter"
-  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "11af58de3e24c7c1f0b76a61eea3d1be8911ec800de9c3b678bb05d1c2d72ddb"
+  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "157a5515c9fefba7af5ccb3d5d887d8aa3bd15cba1661dd911fd84d819917bff"
   license "MIT"
 
   depends_on "rust" => :build
@@ -13,14 +13,11 @@ class WebpConverter < Formula
 
   def caveats
     <<~EOS
-      To run the interactive CLI, execute:
+      Run the interactive CLI:
         webp-convert
 
-      To convert images in batch mode:
-        webp-convert --input <path> --output <dir> --quality 80
-
-      To view all options:
-        webp-convert --help
+      Or batch convert non-interactively:
+        webp-convert --input /path/to/images --output ~/Downloads
     EOS
   end
 
