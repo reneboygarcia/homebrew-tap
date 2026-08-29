@@ -1,27 +1,44 @@
 class WebpConverter < Formula
   desc "Fast CLI tool to convert images to WebP — Rust rewrite"
   homepage "https://github.com/reneboygarcia/webp-converter"
-  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.7.tar.gz"
-  sha256 "ba31d58760493827abdd7fa284089c460480e45c4ca7ece110e15e8c5ae066b1"
+  url "https://github.com/reneboygarcia/webp-converter/archive/refs/tags/v0.2.8.tar.gz"
+  sha256 "178e6acb921ba0d7e6a405fc7bfcd590a173d5cc38265443f7851c2a5bc60f76"
   license "MIT"
+  head "https://github.com/reneboygarcia/webp-converter.git", branch: "main"
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+    bin.install_symlink bin/"webp-convert" => "webp-conv"
   end
 
   def caveats
     <<~EOS
-      Run the interactive CLI:
-        webp-convert
+      Once installed, you can start webp-converter from your terminal:
 
-      Or batch convert non-interactively:
-        webp-convert --input /path/to/images --output ~/Downloads
+      Interactive mode:
+        webp-convert  (or 'webp-conv')
+
+      Batch convert non-interactively:
+        webp-conv --input /path/to/images --output ~/Downloads
+
+      Install / configure CLI:
+        webp-conv install
+
+      Check for updates / upgrade:
+        webp-conv update
+
+      Uninstall:
+        webp-conv delete
+
+      For full usage options:
+        webp-conv --help
     EOS
   end
 
   test do
-    assert_match "Convert images to WebP format", shell_output("#{bin}/webp-convert --help")
+    system bin/"webp-convert", "--help"
+    system bin/"webp-conv", "--help"
   end
 end
